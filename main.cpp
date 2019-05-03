@@ -16,7 +16,7 @@ void show(T* ptr, int size) {
 template <typename T>
 int razn(T* ptr, int size)
 {
-	cout << "Èñõîäíûé ìàññèâ: ";
+	cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: ";
 	show(ptr, size);
 	T min = *ptr, max = *ptr;
 	for (int i = 0; i < size; i++)
@@ -27,7 +27,7 @@ int razn(T* ptr, int size)
 			min = *ptr;
 		ptr++;
 	}
-	cout << "Ðàçíèöà: " << max - min << endl;
+	cout << "Ð Ð°Ð·Ð½Ð¸Ñ†Ð°: " << max - min << endl;
 	return max - min;
 }
 
@@ -35,7 +35,7 @@ int main() {
 	setlocale(LC_ALL, "Rus");
 
 	srand(time(NULL));
-	// Ðàíäîìèçàöèÿ ðàçìåðà ìàññèâîâ
+	// Ð Ð°Ð½Ð´Ð¾Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ñ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð° Ð¼Ð°ÑÑÐ¸Ð²Ð¾Ð²
 	int size = rand() % 20 + 1;
 
 	int* int_mass = new int[size];
@@ -44,7 +44,7 @@ int main() {
 	double* double_mass = new double[size];
 
 
-	// Çàïîëíåíèå ìàññèâîâ
+	// Ð—Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ðµ Ð¼Ð°ÑÑÐ¸Ð²Ð¾Ð²
 	for (int i = 0; i < size; i++) {
 		int_mass[i] = rand() % 50 + 50;
 		char_mass[i] = rand() % 127 + 33;
@@ -55,19 +55,19 @@ int main() {
 	int callback;
 	while (true) {
 		system("cls");
-		cout << "Ìåíþ âûáîðà òèïà ýëåìåíòîâ ìàññèâà:" << endl
+		cout << "ÐœÐµÐ½ÑŽ Ð²Ñ‹Ð±Ð¾Ñ€Ð° Ñ‚Ð¸Ð¿Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°:" << endl
 		 << "1. int" << endl
 		 << "2. char" << endl
 		 << "3. float" << endl
 		 << "4. double" << endl
-		 << "0. Âûõîä" << endl
-		 << "Âàø âûáîð: ";
+		 << "0. Ð’Ñ‹Ñ…Ð¾Ð´" << endl
+		 << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 		cin >> callback;
 		try
 		{
 			if (!(callback >= 0 && callback <= 4))
 			{
-				throw "Îøèáêà: Íå âåðíûé âûáîð â ìåíþ";
+				throw "ÐžÑˆÐ¸Ð±ÐºÐ°: ÐÐµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€ Ð² Ð¼ÐµÐ½ÑŽ";
 			}
 		}
 		catch (const char *i)
